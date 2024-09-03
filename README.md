@@ -23,11 +23,11 @@ This project is an appointment scheduling system that allows providers to set th
 ### Installation
 
 1. **Clone the Repository:**
-
    ```bash
    git clone https://github.com/yourusername/appointment-scheduler.git
    cd appointment-scheduler
    ```
+````
 
 2. **Install Dependencies:**
 
@@ -268,4 +268,3 @@ For any questions or support, please contact [your-email@example.com](mailto:you
 ```
 
 ```
-````
