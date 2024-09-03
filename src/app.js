@@ -8,6 +8,12 @@ const port = 3000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Define routes
+const appointmentRouter = require("./routes/appointments");
+const providerRouter = require("./routes/providers");
+
+app.use("/providers", providerRouter);
+app.use("/appointments", appointmentRouter);
 // Set up Sequelize using environment variables
 const sequelize = new Sequelize({
   dialect: process.env.DB_DIALECT,
@@ -25,11 +31,5 @@ sequelize
   .catch((err) => {
     console.error("Unable to connect to the database:", err);
   });
-
-// Define routes
-// const providerRoutes = require("./routes/providers");
-// const appointmentRoutes = require("./routes/appointments");
-// app.use("/api/providers", providerRoutes);
-// app.use("/api/appointments", appointmentRoutes);
 
 module.exports = app;
