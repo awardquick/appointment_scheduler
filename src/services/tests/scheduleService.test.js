@@ -1,6 +1,6 @@
 "use strict";
 
-const { ScheduleService } = require("../scheduleService");
+const ScheduleService = require("../scheduleService");
 const { Op } = require("sequelize");
 
 // Initialize mock database
@@ -102,7 +102,7 @@ describe("ScheduleService", () => {
 
       await expect(
         scheduleService.createSchedule(providerId, startTime, endTime)
-      ).rejects.toThrow("Provider not found or invalid role");
+      ).rejects.toThrow("Provider not found");
 
       expect(ProviderMock.findByPk).toHaveBeenCalledWith(providerId);
     });

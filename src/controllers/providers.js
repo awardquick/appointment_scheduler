@@ -4,7 +4,8 @@ const createSchedule = async (req, res) => {
   try {
     const { providerId } = req.params;
     const { start_time, end_time } = req.body;
-    const schedule = await ScheduleService.createSchedule(
+    const scheduleService = new ScheduleService();
+    const schedule = await scheduleService.createSchedule(
       providerId,
       start_time,
       end_time

@@ -2,7 +2,7 @@ const { Schedule, Provider } = require("../models");
 const { Op } = require("sequelize");
 
 class ScheduleService {
-  static async createSchedule(providerId, startTime, endTime) {
+  async createSchedule(providerId, startTime, endTime) {
     try {
       const provider = await Provider.findByPk(providerId);
       if (!provider) {
