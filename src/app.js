@@ -1,4 +1,5 @@
 require("dotenv").config(); // Load environment variables from .env file
+require("./scripts/appointmentCleanup");
 const express = require("express");
 const { Sequelize } = require("sequelize");
 const app = express();

@@ -120,11 +120,16 @@ class AppointmentService {
         throw new Error("Slot is already booked");
       }
 
+      // Calculate expires_at as 30 minutes from now (current time)
+      const now = new Date();
+      const expiresAt = new Date(now.getTime() + 30 * 60 * 1000);
+
       // Create the appointment (reservation)
       const appointment = await Appointment.create({
         schedule_id: scheduleId,
         client_id: clientId,
         reservation_time: reservationDate,
+        expires_at: expiresAt,
       });
 
       return appointment;

@@ -29,6 +29,7 @@ module.exports = (sequelize, DataTypes) => {
       client_id: DataTypes.UUID,
       reservation_time: DataTypes.DATE,
       confirmed: DataTypes.BOOLEAN,
+      expires_at: DataTypes.DATE,
     },
     {
       sequelize,
